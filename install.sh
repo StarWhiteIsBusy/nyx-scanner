@@ -1281,20 +1281,13 @@ Hotkey-launched camera QR scanner: one-tap WiFi connection, one-click URL openin
 **在线一键安装 / Online one-liner:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install-online.sh | bash
-```
-
-`install.sh` 本身是独立单文件,也可直接管道执行。
-`install.sh` is standalone — it can also be piped directly:
-
-```bash
 curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install.sh | bash
 ```
 
 **在线卸载 / Online uninstall:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/uninstall-online.sh | bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/uninstall.sh | bash
 ```
 
 **本地安装与卸载 / Local:**
@@ -1329,8 +1322,7 @@ Reload with `niri msg action load-config-file`. Noctalia's own keybind settings 
 - `panel_scanner.luau` — 扫描浮窗(摄像头画面 + 识别弹窗 + 截图/图片扫码 + 心跳保活) / scanning panel
 - `helper/scan_helper.py` — ffmpeg 抓帧 → zbarimg 解码 → JSON 行输出;`--image`/`--screenshot` 模式 / capture → decode → JSON lines; image & screenshot modes
 - `translations/` — en / zh / zh-Hans(Noctalia 语言名 `zh-Hans`;若面板为英文,在 `~/.local/state/noctalia/settings.toml` 加 `[appearance] language = "zh-Hans"` / for English UI set `zh-Hans`)
-- `install.sh` — 单文件安装程序(全部插件文件内嵌) / single-file installer (embeds all plugin files);`uninstall.sh` — 卸载 / uninstaller
-- `install-online.sh` / `uninstall-online.sh` — curl 在线安装/卸载入口 / curl online install/uninstall entry
+- `install.sh` / `uninstall.sh` — 单文件安装/卸载程序,可直接 `curl ... | bash` 在线执行 / single-file installer & uninstaller, pipe via curl
 README_MD
   show "$pct" "README.md"
 

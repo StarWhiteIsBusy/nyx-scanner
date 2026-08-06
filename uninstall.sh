@@ -28,9 +28,11 @@ show() {
 echo "将卸载插件: $PLUGIN_ID"
 echo "  插件目录: $DEST"
 echo "  数据目录: $DATA_DIR"
-printf '确认卸载? [y/N] '
-read -r ans
-[[ "$ans" == "y" || "$ans" == "Y" ]] || { echo "已取消"; exit 1; }
+if [[ -t 0 ]]; then
+  printf '确认卸载? [y/N] '
+  read -r ans
+  [[ "$ans" == "y" || "$ans" == "Y" ]] || { echo "已取消"; exit 1; }
+fi
 
 main() {
   local total=5
