@@ -109,3 +109,4 @@ Reload with `niri msg action load-config-file`. Noctalia's own keybind settings 
 - `translations/` — en / zh / zh-Hans(Noctalia 语言名 `zh-Hans`;若面板为英文,在 `~/.local/state/noctalia/settings.toml` 加 `[appearance] language = "zh-Hans"` / for English UI set `zh-Hans`)
 - `install.sh` — 单文件安装程序(全部插件文件内嵌) / single-file installer (embeds all plugin files);`uninstall.sh` — 卸载 / uninstaller
 - `install-online.sh` / `uninstall-online.sh` — curl 在线安装/卸载入口 / curl online install/uninstall entry
+
