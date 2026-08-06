@@ -444,3 +444,4 @@ if __name__ == "__main__":
         screenshot_scan(workdir)
         sys.exit(0)
     main()
+
