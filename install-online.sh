@@ -16,3 +16,4 @@ echo "==> 校验语法..."
 bash -n "$TMP"
 echo "==> 执行安装..."
 bash "$TMP" "$@"
+
