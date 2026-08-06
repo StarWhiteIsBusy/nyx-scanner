@@ -16,3 +16,4 @@ echo "==> 校验语法..."
 bash -n "$TMP"
 echo "==> 执行卸载..."
 bash "$TMP" "$@"
+
