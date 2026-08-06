@@ -502,3 +502,4 @@ function onFrameTick(deltaMs)
     render()
   end
 end
+
