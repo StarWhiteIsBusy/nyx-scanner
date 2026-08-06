@@ -1276,6 +1276,12 @@ The `install.sh` itself is standalone — you can also pipe it directly:
 curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install.sh | bash
 ```
 
+**Online uninstall:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/uninstall-online.sh | bash
+```
+
 **Local:**
 
 ```bash
@@ -1369,6 +1375,12 @@ curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/he
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install.sh | bash
+```
+
+**在线卸载:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/uninstall-online.sh | bash
 ```
 
 **本地安装:**
