@@ -54,3 +54,4 @@ height                  = 460
 placement               = "floating"
 position                = "center"
 dismiss_on_outside_click = false
+
