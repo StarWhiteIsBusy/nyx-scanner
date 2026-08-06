@@ -107,3 +107,4 @@ with open(OUT, "w", encoding="utf-8") as f:
 
 os.chmod(OUT, 0o755)
 print("wrote", OUT, len("".join(parts)), "bytes")
+
