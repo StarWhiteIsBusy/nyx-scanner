@@ -42,6 +42,20 @@ A Noctalia plugin that turns your webcam into a QR scanner: scan a WiFi QR code 
 
 ## Installation
 
+**Online (one-liner):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install-online.sh | bash
+```
+
+The `install.sh` itself is standalone — you can also pipe it directly:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install.sh | bash
+```
+
+**Local:**
+
 ```bash
 ./install.sh            # installs to ~/.local/share/noctalia/plugins/nyx-scanner/
 ./install.sh <dir>      # installs to a custom directory (skips enabling)
@@ -122,6 +136,20 @@ Regenerate the single-file installer: `python3 /tmp/opencode/gen_install.py` (ge
 - 识别成功但不含 WiFi/网址信息的二维码(纯文本等),弹窗提示「该二维码无法被识别」,倒数 3 秒后回到扫描界面
 
 ## 安装
+
+**在线一键安装:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install-online.sh | bash
+```
+
+`install.sh` 本身是独立单文件,也可直接管道执行:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/StarWhiteIsBusy/nyx-scanner/refs/heads/main/install.sh | bash
+```
+
+**本地安装:**
 
 ```bash
 ./install.sh            # 安装到 ~/.local/share/noctalia/plugins/nyx-scanner/
