@@ -1,0 +1,56 @@
+id           = "starwhite/scan_wifi"
+name         = "Nyx Scanner"
+version      = "1.0.0"
+plugin_api   = 18
+author       = "starwhite"
+license      = "MIT"
+icon         = "qrcode"
+description  = "快捷键唤起摄像头扫码窗:WiFi 二维码一键连接(支持隐藏 SSID/开放网络/转义符,失败自动重试),网址二维码一键打开"
+tags         = ["wifi", "qrcode", "utility"]
+dependencies = ["python3", "ffmpeg", "zbar-tools", "zenity", "nmcli"]
+
+[[setting]]
+key             = "camera_device"
+type            = "string"
+label_key       = "settings.camera_device.label"
+description_key = "settings.camera_device.description"
+default         = "/dev/video0"
+
+[[setting]]
+key             = "camera_resolution"
+type            = "select"
+label_key       = "settings.camera_resolution.label"
+description_key = "settings.camera_resolution.description"
+default         = "1280x720"
+options = [
+  { value = "640x480",  label_key = "settings.camera_resolution.640" },
+  { value = "1280x720", label_key = "settings.camera_resolution.1280" },
+  { value = "1920x1080", label_key = "settings.camera_resolution.1920" },
+]
+
+[[setting]]
+key             = "wifi_refresh_seconds"
+type            = "int"
+label_key       = "settings.wifi_refresh_seconds.label"
+description_key = "settings.wifi_refresh_seconds.description"
+default         = 10
+min             = 2
+max             = 120
+
+[[setting]]
+key             = "popup_timeout_ms"
+type            = "int"
+label_key       = "settings.popup_timeout_ms.label"
+description_key = "settings.popup_timeout_ms.description"
+default         = 3000
+min             = 1000
+max             = 15000
+
+[[panel]]
+id                      = "scanner"
+entry                   = "panel_scanner.luau"
+width                   = 560
+height                  = 460
+placement               = "floating"
+position                = "center"
+dismiss_on_outside_click = false

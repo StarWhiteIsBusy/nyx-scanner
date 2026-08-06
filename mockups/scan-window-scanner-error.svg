@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="460" viewBox="0 0 560 460" font-family="'Noto Sans SC','Noto Sans CJK SC','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="camBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#352d23"/>
+      <stop offset="1" stop-color="#1d1710"/>
+    </linearGradient>
+    <linearGradient id="topScrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FAB571" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FAB571"/>
+      <stop offset="1" stop-color="#FAB571" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="popupShadow" x="-10%" y="-40%" width="120%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- camera fills the whole window -->
+  <rect x="0" y="0" width="560" height="460" rx="14" fill="url(#camBg)" stroke="#181310" stroke-width="1"/>
+  <rect x="8" y="8" width="544" height="444" rx="10" fill="#16110b"/>
+
+  <!-- viewfinder corner brackets: frame 16..544 x 64..432 -->
+  <g stroke="#FAB571" stroke-width="2.4" fill="none" filter="url(#glow)" opacity="0.95">
+    <path d="M16 76 V64 H28"/>
+    <path d="M532 64 H544 V76"/>
+    <path d="M544 420 V432 H532"/>
+    <path d="M28 432 H16 V420"/>
+  </g>
+
+  <!-- scan sweep line -->
+  <rect x="8" y="246" width="544" height="2.6" rx="1.3" fill="url(#scanLine)" filter="url(#glow)"/>
+
+  <!-- blurred, unreadable view -->
+  <g fill="#2c2418" opacity="0.8">
+    <rect x="90" y="110" width="240" height="16" rx="8"/>
+    <rect x="110" y="140" width="190" height="12" rx="6"/>
+    <rect x="80" y="168" width="270" height="14" rx="7"/>
+    <rect x="140" y="196" width="170" height="10" rx="5"/>
+    <rect x="300" y="230" width="110" height="12" rx="6"/>
+    <rect x="110" y="262" width="220" height="13" rx="6.5"/>
+    <rect x="340" y="292" width="80" height="11" rx="5.5"/>
+    <rect x="220" y="320" width="150" height="12" rx="6"/>
+  </g>
+
+  <!-- title bar overlay -->
+  <rect x="0" y="0" width="560" height="64" fill="url(#topScrim)"/>
+  <text x="24" y="38" font-size="16" font-weight="bold" fill="#FAB571">扫描二维码</text>
+  <text x="140" y="38" font-size="11" fill="#E8DCD4" opacity="0.75">将包含 WiFi 信息的二维码对准摄像头</text>
+
+  <!-- close button: right edge aligned with viewfinder frame (x=544) -->
+  <g transform="translate(508,18)">
+    <rect x="0" y="0" width="36" height="36" rx="10" fill="#000000" fill-opacity="0.35"/>
+    <path d="M12.5 12.5 L23.5 23.5 M23.5 12.5 L12.5 23.5" stroke="#E8DCD4" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- ============ compact error popup: inside viewfinder, near bottom, no icon, no accent bar ============ -->
+  <g filter="url(#popupShadow)">
+    <rect x="40" y="352" width="480" height="52" rx="12" fill="#433A35" stroke="#4F4238" stroke-width="1"/>
+    <text x="56" y="373" font-size="13.5" font-weight="bold" fill="#E8DCD4">二维码未识别出wifi</text>
+    <text x="56" y="393" font-size="11.5" fill="#928374">3 秒后自动消失</text>
+  </g>
+</svg>

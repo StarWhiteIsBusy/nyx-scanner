@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="460" viewBox="0 0 560 460" font-family="'Noto Sans SC','Noto Sans CJK SC','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="camBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#352d23"/>
+      <stop offset="1" stop-color="#1d1710"/>
+    </linearGradient>
+    <linearGradient id="topScrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FAB571" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FAB571"/>
+      <stop offset="1" stop-color="#FAB571" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="popupShadow" x="-10%" y="-40%" width="120%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- camera fills the whole window -->
+  <rect x="0" y="0" width="560" height="460" rx="14" fill="url(#camBg)" stroke="#181310" stroke-width="1"/>
+  <rect x="8" y="8" width="544" height="444" rx="10" fill="#16110b"/>
+
+  <!-- viewfinder corner brackets: frame 16..544 x 64..432 -->
+  <g stroke="#FAB571" stroke-width="2.4" fill="none" filter="url(#glow)" opacity="0.95">
+    <path d="M16 76 V64 H28"/>
+    <path d="M532 64 H544 V76"/>
+    <path d="M544 420 V432 H532"/>
+    <path d="M28 432 H16 V420"/>
+  </g>
+
+  <!-- scan sweep line -->
+  <rect x="8" y="246" width="544" height="2.6" rx="1.3" fill="url(#scanLine)" filter="url(#glow)"/>
+
+  <!-- QR card held in front of camera -->
+  <g transform="translate(236,116) rotate(-4 44 44)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="88" height="88" rx="8" fill="#F1E9E0"/>
+    <g fill="#1c1710">
+      <rect x="12" y="12" width="18" height="18" rx="2.5" fill="#1c1710"/>
+      <rect x="16.5" y="16.5" width="9" height="9" rx="1.3" fill="#F1E9E0"/>
+      <rect x="58" y="12" width="18" height="18" rx="2.5" fill="#1c1710"/>
+      <rect x="62.5" y="16.5" width="9" height="9" rx="1.3" fill="#F1E9E0"/>
+      <rect x="12" y="58" width="18" height="18" rx="2.5" fill="#1c1710"/>
+      <rect x="16.5" y="62.5" width="9" height="9" rx="1.3" fill="#F1E9E0"/>
+      <rect x="36" y="13" width="6" height="6" rx="1"/>
+      <rect x="46" y="13" width="6" height="6" rx="1"/>
+      <rect x="36" y="22" width="6" height="6" rx="1"/>
+      <rect x="46" y="22" width="6" height="6" rx="1"/>
+      <rect x="36" y="34" width="6" height="6" rx="1"/>
+      <rect x="46" y="34" width="6" height="6" rx="1"/>
+      <rect x="36" y="43" width="6" height="6" rx="1"/>
+      <rect x="46" y="43" width="6" height="6" rx="1"/>
+      <rect x="53" y="43" width="6" height="6" rx="1"/>
+      <rect x="36" y="57" width="6" height="6" rx="1"/>
+      <rect x="46" y="57" width="6" height="6" rx="1"/>
+      <rect x="55" y="57" width="6" height="6" rx="1"/>
+      <rect x="63" y="43" width="6" height="6" rx="1"/>
+      <rect x="70" y="43" width="6" height="6" rx="1"/>
+      <rect x="63" y="52" width="6" height="6" rx="1"/>
+      <rect x="70" y="52" width="6" height="6" rx="1"/>
+      <rect x="36" y="70" width="6" height="6" rx="1"/>
+      <rect x="46" y="70" width="6" height="6" rx="1"/>
+      <rect x="55" y="70" width="6" height="6" rx="1"/>
+    </g>
+  </g>
+
+  <!-- detected pill: top-right inside viewfinder -->
+  <rect x="436" y="68" width="78" height="26" rx="13" fill="#FAB571"/>
+  <path d="M448 81 L452 85 L460 77" stroke="#231C16" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470" y="85" font-size="12" font-weight="bold" fill="#231C16">已识别</text>
+
+  <!-- title bar overlay -->
+  <rect x="0" y="0" width="560" height="64" fill="url(#topScrim)"/>
+  <text x="24" y="38" font-size="16" font-weight="bold" fill="#FAB571">扫描二维码</text>
+  <text x="140" y="38" font-size="11" fill="#E8DCD4" opacity="0.75">将包含 WiFi 信息的二维码对准摄像头</text>
+
+  <!-- close button: right edge aligned with viewfinder frame (x=544) -->
+  <g transform="translate(508,18)">
+    <rect x="0" y="0" width="36" height="36" rx="10" fill="#000000" fill-opacity="0.35"/>
+    <path d="M12.5 12.5 L23.5 23.5 M23.5 12.5 L12.5 23.5" stroke="#E8DCD4" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- ============ compact result popup: inside viewfinder, near bottom, no accent bar ============ -->
+  <g filter="url(#popupShadow)">
+    <rect x="40" y="356" width="480" height="48" rx="12" fill="#433A35" stroke="#4F4238" stroke-width="1"/>
+    <g transform="translate(58,372)">
+      <path d="M6 8 a8 8 0 0 1 16 0 l-1.7 0 a6.3 6.3 0 0 0 -12.6 0 Z M14 4 a2 2 0 0 1 2 2 v5 a2 2 0 0 1 -4 0 v-5 a2 2 0 0 1 2 -2 Z" fill="#FAB571"/>
+    </g>
+    <text x="88" y="384" font-size="13.5" font-weight="bold" fill="#E8DCD4">VM5038751</text>
+    <text x="222" y="384" font-size="12" fill="#928374">密码 </text>
+    <text x="258" y="384" font-size="12" fill="#E8DCD4">12345678</text>
+    <rect x="392" y="364" width="112" height="28" rx="9" fill="#FAB571"/>
+    <text x="448" y="383" text-anchor="middle" font-size="13" font-weight="bold" fill="#231C16">确认连接</text>
+  </g>
+</svg>
